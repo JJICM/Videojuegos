@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Videojuegos</string>
+    <string name="msg_games_info">Título: %1$s\nGénero: %2$s\nPlataforma: %3$s</string>
+    <string name="msg_error_api">Error al cargar la API</string>
+    <string name="txt_buscar">Buscar</string>
+</resources>
