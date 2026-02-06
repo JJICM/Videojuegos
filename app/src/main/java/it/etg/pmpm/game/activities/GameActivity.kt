@@ -60,19 +60,20 @@ class GameActivity : AppCompatActivity() {
                 getApi(gamesDao)
                 games = gamesDao.getAll()
             }
-            val datos = ArrayList<String>()
+
+            val gameInfo = ArrayList<String>()
             if (id != null) {
                 val game = gamesDao.getById(id)
-                datos.add(getString(R.string.msg_games_info, game?.title, game?.genre, game?.platform))
+                gameInfo.add(getString(R.string.msg_games_info, game?.title, game?.genre, game?.platform))
             } else {
                 games.forEach { game ->
-                    datos.add(getString(R.string.msg_games_info, game.title, game.genre, game.platform))
+                    gameInfo.add(getString(R.string.msg_games_info, game.title, game.genre, game.platform))
                 }
             }
 
             withContext(Dispatchers.Main) {
                 adapter.clear()
-                adapter.addAll(datos)
+                adapter.addAll(gameInfo)
                 adapter.notifyDataSetChanged()
             }
         }
